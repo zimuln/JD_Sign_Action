@@ -14,6 +14,7 @@
 * 点击右上角 `Fork` 项目；
 * `Settings` -> `Secrets` 中添加京东cookie、Server酱SCKEY
 	- `JD_COOKIE`：京东cookie
+	- `JD_DUAL_COOKIE`：账号2Cookie(选填)
 	- `PUSH_KEY`：Server酱SCKEY
 * 点击`Star`，任务会自动执行，运行进度和结果可以在`Actions`页面查看；
 * 当任务运行完成时，会将运行结果和错误信息打包到`Artifacts`，可自行下载查看；
