@@ -34,6 +34,9 @@ jobs:
             - name: Run install
               run: npm install
               
+            - name: Run install2
+              run: npm install
+              
             - name: Run Script
               run: node jd_sign.js
                 
