@@ -71,7 +71,7 @@ function sendNotificationIfNeed() {
     console.log('没有执行结果，任务中断!'); return;
   }
 
-  let title = "京东签到_" + dateFormat();
+  let text = "京东签到_" + dateFormat();
   let desp = fs.readFileSync(result_path, "utf8")
 
   // 去除末尾的换行
@@ -79,7 +79,8 @@ function sendNotificationIfNeed() {
 
   const options ={
     uri:  `https://sctapi.ftqq.com/${SCKEY}.send`,
-    form: { title, desp },
+    form: { text, desp },
+    header: 'Content-type: application/x-www-form-urlencoded',
     json: true,
     method: 'POST'
   }
@@ -96,6 +97,7 @@ function sendNotificationIfNeed() {
     }
   }).catch((err)=>{
     console.log("通知发送失败，任务中断！")
+    console.log("通知发送失败，任务中断！" + err)
     fs.writeFileSync(error_path, err, 'utf8')
   })
 }
